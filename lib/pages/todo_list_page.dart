@@ -3,25 +3,28 @@ import 'package:flutter/material.dart';
 class TodoListPage extends StatelessWidget {
   TodoListPage({super.key});
 
-  final TextEditingController emailController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
+          padding: const EdgeInsets.all(16),
+          child: Row(
             children: [
-              TextField(
-                controller: emailController,
-                decoration: const InputDecoration(labelText: 'E-mail'),
-
-                //obscureText: true,
+              const Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Adicione uma tarefa',
+                      hintText: 'Ex: Estudar Flutter'),
+                ),
+              ),
+              const SizedBox(
+                width: 8,
               ),
               ElevatedButton(
-                onPressed: null,
-                child: Text('Entrar'),
+                onPressed: () {},
+                child: const Text('+'),
               ),
             ],
           ),
